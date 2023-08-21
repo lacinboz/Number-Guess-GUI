@@ -1,7 +1,7 @@
 import random
 import tkinter as tk
 from tkinter import messagebox
-#ass
+
 count=0
 size=16
 class NumberGuessingGame:
