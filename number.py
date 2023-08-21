@@ -2,8 +2,7 @@ import random
 import tkinter as tk
 from tkinter import messagebox
 
-count=0
-size=16
+
 class NumberGuessingGame:
     def __init__(self, window):
         self.window = window
@@ -16,16 +15,7 @@ class NumberGuessingGame:
         self.number_of_guesses = 0
         self.user_name = ""
         self.show_main_page()
-    def increase_animation(self):
-        global size,count
-        if count <10:
-            size +=2
 
-            count +=1
-            window.after()
-        pass
-    def decrease_animation(self):
-        pass
     def show_instructions(self):
         instructions = """ **** Game Instructions ****
     1. Write two numbers for the range in which the random number will be generated.
@@ -69,14 +59,17 @@ class NumberGuessingGame:
         self.name_entry = tk.Entry(self.window, font=("Times New Roman", 13, "italic"))
         self.name_entry.place(x=170, y=150)
 
-        show_greeting_button = tk.Button(
+        self.show_greeting_button = tk.Button(
             self.window,
             text=" Save the name ->",
-            font=("Times New Roman", 13,),
+            font=(
+                "Times New Roman",
+                13,
+            ),
             fg="#3b5998",
             command=self.display_greeting,
         )
-        show_greeting_button.place(x=400, y=150)
+        self.show_greeting_button.place(x=400, y=150)
 
         self.show_greeting_label = tk.Label(self.window, text="", bg="#3b5998")
         self.show_greeting_label.place(x=100, y=200)
@@ -285,7 +278,10 @@ class NumberGuessingGame:
         self.save_guess_button = tk.Button(
             self.window,
             text=" Submit guess ->",
-            font=("Times New Roman", 13,),
+            font=(
+                "Times New Roman",
+                13,
+            ),
             fg="#3b5998",
             command=lambda: self.calculate_guess_result(),
         )
