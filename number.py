@@ -12,9 +12,9 @@ class NumberGuessingGame:
         window.title("Number Guessing Game")
         window.config(bg="#3b5998")
 
-        #Add background image: 
+        # Add background image:
         self.background_image = PhotoImage(file="images/guess_game_background.png")
-      
+
         self.arrow_image = PhotoImage(file="images/arrow.png")
         self.photoimage = self.arrow_image.subsample(3, 3)
         self.random_number = 0
@@ -44,11 +44,9 @@ class NumberGuessingGame:
         self.clear_frame()
         self.create_menu()
 
-       
-
         bg_label = tk.Label(self.window, image=self.background_image)
-        bg_label.place(x=0, y=0, relwidth=1, relheight=1)  
-      
+        bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+
         # Title
         title = tk.Label(
             self.window,
@@ -59,7 +57,7 @@ class NumberGuessingGame:
             relief="ridge",
             padx=2,
             pady=2,
-            borderwidth=2
+            borderwidth=2,
         )
         title.place(x=140, y=30)
 
@@ -72,8 +70,7 @@ class NumberGuessingGame:
             relief="groove",
             padx=2,
             pady=3,
-            borderwidth=1
-            
+            borderwidth=1,
         )
         user_name_label.place(x=171, y=100)
 
@@ -83,16 +80,12 @@ class NumberGuessingGame:
         self.show_greeting_button = tk.Button(
             self.window,
             text=" Save the name ",
-            font=(
-                "Times New Roman",
-                12,
-                "bold"
-            ),
+            font=("Times New Roman", 12, "bold"),
             fg="#3b5998",
             bg="white",
             image=self.photoimage,
             command=self.display_greeting,
-            compound = "right",
+            compound="right",
             padx=10,
             relief="groove",
         )
@@ -112,7 +105,6 @@ class NumberGuessingGame:
             fg="#3b5998",
             bg="#FAC43C",
             command=exit,
-             
         )
         exit_button.place(x=300, y=320)
 
@@ -136,7 +128,7 @@ class NumberGuessingGame:
             relief="groove",
             padx=2,
             pady=3,
-            borderwidth=1
+            borderwidth=1,
         )
         self.show_play_game_label.config(
             text="Press play game button to start! ",
@@ -146,16 +138,15 @@ class NumberGuessingGame:
             relief="groove",
             padx=2,
             pady=3,
-            borderwidth=1
+            borderwidth=1,
         )
 
     def show_second_page(self):
         self.clear_frame()
         self.create_menu()
         bg_label = tk.Label(self.window, image=self.background_image)
-        bg_label.place(x=0, y=0, relwidth=1, relheight=1)  
-       
-      
+        bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+
         title = tk.Label(
             self.window,
             text="*** Number Guessing Game ***",
@@ -163,7 +154,7 @@ class NumberGuessingGame:
             fg="#3b5998",
             bg="#FAC43C",
             relief="ridge",
-            borderwidth=2
+            borderwidth=2,
         )
         title.place(x=140, y=30)
 
@@ -176,18 +167,18 @@ class NumberGuessingGame:
             relief="groove",
             padx=2,
             pady=3,
-            borderwidth=1
+            borderwidth=1,
         )
         self.range_label.place(x=130, y=100)
 
         self.show_guessing_widgets_button = tk.Button(
             self.window,
             text=" Save the range",
-            font=("Times New Roman", 12,"bold"),
+            font=("Times New Roman", 12, "bold"),
             fg="#3b5998",
             bg="white",
             image=self.photoimage,
-            compound = "right",
+            compound="right",
             padx=10,
             relief="groove",
             command=self.display_guessing_widgets,
@@ -240,7 +231,6 @@ class NumberGuessingGame:
                 font=("Times New Roman", 13, "bold", "italic"),
                 fg="#3b5998",
                 bg="#FAC43C",
-          
             )
             return
 
@@ -252,10 +242,8 @@ class NumberGuessingGame:
                 font=("Times New Roman", 13, "bold", "italic"),
                 fg="#3b5998",
                 bg="#FAC43C",
-             
             )
             return
-        
 
         if self.guessed_number_value == self.random_number:
             message = "Congratulations! Your guess is correct!\n"
@@ -274,7 +262,6 @@ class NumberGuessingGame:
             font=("Times New Roman", 13, "bold", "italic"),
             fg="#3b5998",
             bg="#FAC43C",
-       
         )
         self.show_message_label.place(x=140, y=210)
 
@@ -286,7 +273,6 @@ class NumberGuessingGame:
                 font=("Times New Roman", 13, "bold", "italic"),
                 fg="#3b5998",
                 bg="#FAC43C",
-         
             )
 
             return
@@ -302,7 +288,7 @@ class NumberGuessingGame:
                 relief="groove",
                 padx=2,
                 pady=3,
-                borderwidth=1
+                borderwidth=1,
             )
             return
 
@@ -312,7 +298,6 @@ class NumberGuessingGame:
                 font=("Times New Roman", 13, "bold", "italic"),
                 fg="#3b5998",
                 bg="#FAC43C",
-                
             )
 
             return
@@ -339,15 +324,11 @@ class NumberGuessingGame:
         self.save_guess_button = tk.Button(
             self.window,
             text=" Submit guess ",
-            font=(
-                "Times New Roman",
-                12,
-                "bold"
-            ),
+            font=("Times New Roman", 12, "bold"),
             fg="#3b5998",
             bg="white",
             image=self.photoimage,
-            compound = "right",
+            compound="right",
             padx=10,
             relief="groove",
             command=lambda: self.calculate_guess_result(),
