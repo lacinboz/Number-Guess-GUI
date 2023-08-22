@@ -1,6 +1,6 @@
 # Number Guessing Game using Tkinter
 
-![Screenshot](screenshot.png)
+![Screenshot](images/guess_game_screenshot.PNG)
 
 A simple interactive Number Guessing Game application built using the Tkinter library in Python. The game allows players to guess a random number within a specified range and provides feedback on whether the guessed number is too high, too low, or correct. Users can personalize their experience by entering their name and choosing the range of numbers for the game.
 
